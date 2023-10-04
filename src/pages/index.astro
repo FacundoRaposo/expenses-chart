@@ -1,0 +1,68 @@
+---
+import BarChart from '../components/BarChart.tsx';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+
+  </head>
+  <body class="w-full max-w-sm my-40 mx-auto bg-light-brown border">
+    <div
+      class="content-center m-2"
+    >
+      <div class="flex bg-soft-red justify-between p-4 border rounded-lg my-2">
+		<div class="text-white">
+			<p>My balance</p>
+			<p class="text-2xl font-bold">$921.48</p>
+		</div>
+		<img src="images/logo.svg" />
+	  </div>
+
+      <div class=" bg-pale-orange rounded-lg p-4">
+		<h3 class="font-bold text-2xl text-dark-brown pt-2 pb-6">Spending - Last 7 days</h3>
+	
+		<BarChart client:load/>        
+
+    <div class="flex items-center justify-between border-t-2">
+        <div>
+			<p class="text-medium-brown pt-4">Total this month</p>
+			<p class="text-3xl font-bold text-dark-brown py-1">$478.33</p>
+		</div>
+    <div class="pt-5">
+			<p class="text-dark-brown font-bold text-right">+2.4%</p><p class="text-medium-brown">from last month</p></div>
+    </div>
+	</div>
+
+    </div>
+    <div class="attribution">
+      Challenge by <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank">Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+
+	
+  </body>
+</html>
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap');
+  :root{
+    font-family: 'DM Sans', sans-serif;
+  }
+	.bar-chart {
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: space-between;
+	  align-items: flex-end;
+	  height: auto;
+	  width: 100%;
+	  border-radius: 5px;
+	  padding: 10px;
+	}
+
+  </style>
